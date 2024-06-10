@@ -1,0 +1,22 @@
+/* Inside StartingPageStyles.css */
+.hover-signin { 
+    /* before hover */
+    transition: 0.2s;
+  }
+.hover-signin:hover {
+    /* on-hover */
+    border-bottom: 2px solid #f44336;
+    transform:scale(1.2,1.2);
+  }
+
+.hover-logout
+{
+  transition: 0.2s;
+}
+.hover-logout:hover
+{
+  transition: 0.2s;
+  border-bottom: 2px solid #f44336;
+  transform:scale(1.2,1.2);
+}
+

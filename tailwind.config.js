@@ -1,0 +1,68 @@
+module.exports = {
+  mode: "jit",
+  content: [
+    "./src/**/**/*.{js,ts,jsx,tsx,html,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,html,mdx}",
+  ],
+  darkMode: "class",
+  theme: {
+    screens: { md: { max: "1050px" }, sm: { max: "550px" } },
+    extend: {
+      colors: {
+        red: {
+          500: "#fa3e49",
+          600: "#d0483b",
+          700: "#be4741",
+          800: "#af4647",
+          "700_01": "#d82525",
+        },
+        blue_gray: {
+          50: "#edeff4",
+          100: "#cccccc",
+          300: "#94aeba",
+          900: "#313043",
+          "900_01": "#333333",
+          "300_01": "#98adbc",
+          "300_02": "#96a5bd",
+        },
+        pink: { 900: "#733232" },
+        green: { A700_01: "#25d837", A700: "#12dd1a" },
+        gray: {
+          50: "#fcf8f8",
+          100: "#f4f7f9",
+          200: "#ebebeb",
+          400: "#b7bac2",
+          700: "#666666",
+          800: "#3c3c3c",
+          900: "#222222",
+          "800_01": "#444444",
+          "500_07": "#aaaaaa07",
+        },
+        black: { 900: "#000000" },
+        light_green: {
+          600: "#7ca548",
+          800: "#6a7332",
+          "800_01": "#717a3c",
+          "600_01": "#7ba448",
+        },
+        deep_orange: { 500: "#ff4b2b", "500_01": "#fb6815" },
+        indigo: { 800: "#323e73", "800_01": "#323f73" },
+        purple: { 800: "#723273" },
+        orange: { A700: "#fa6714" },
+        white: { A700_01: "#fdfeff", A700: "#ffffff" },
+      },
+      backgroundImage: {
+        gradient:
+          "linear-gradient(90deg ,#98adbc,#323f73,#af4647,#af4647,#be4741,#d0483b,#ff4b2b)",
+        gradient1: "linear-gradient(180deg ,#edeff4,#ffffff)",
+        gradient2: "linear-gradient(180deg ,#7ba448,#ffffff)",
+        gradient3: "linear-gradient(180deg ,#723273,#ffffff)",
+        gradient4: "linear-gradient(180deg ,#6a7332,#717a3c,#ffffff)",
+        gradient5: "linear-gradient(180deg ,#733232,#ffffff)",
+      },
+      fontFamily: { poppins: "Poppins", inter: "Inter" },
+      boxShadow: { bs: "0px 4px  32px 0px #aaaaaa07" },
+    },
+  },
+  plugins: [require("@tailwindcss/forms")],
+};
