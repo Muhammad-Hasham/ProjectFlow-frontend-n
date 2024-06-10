@@ -31,7 +31,6 @@ const SigninPage = () => {
       localStorage.setItem("email",response.data.data.user.email)
       localStorage.setItem("photo",response.data.data.user.photo)
       localStorage.setItem("role",response.data.data.user.role)
-      alert("LoggedIn Successfully")
       if(response.data.data.user.role==="admin")
       {
         navigate("/logs");

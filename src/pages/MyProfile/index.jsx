@@ -1,16 +1,12 @@
 import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../styles/my.css';
-import { Sidebar } from "react-pro-sidebar";
 import Navigation from "pages/Sidebar";
 
 import { Button, Img, Text } from "components";
 
 const MyProfilePage = () => {
   const navigate = useNavigate();
-
-
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [photo, setPhoto] = useState(null); // To store the selected photo
@@ -145,7 +141,7 @@ const MyProfilePage = () => {
           <Navigation/>
           <div className="flex md:flex-1 flex-col md:gap-10 gap-[105px] justify-start md:mt-0 mt-[68px] w-[70%] md:w-full">
             <Text
-              className="common-pointer md:ml-[0] ml-[1024px] text-base text-indigo-800 w-[5.5%] tracking-[0.44px] hover-logout"
+              className="common-pointer md:ml-[0] ml-[1070px] text-base text-indigo-800 w-[5.5%] tracking-[0.44px] hover-logout"
               size="txtPoppinsRegular16"
               // onClick={() => navigate("/myprofile")}
               onClick={handleLogout}
@@ -153,13 +149,27 @@ const MyProfilePage = () => {
               Logout
             </Text>
             <div className="flex flex-col gap-4 items-start justify-start w-full mt-[-120px]">
-              <Text
-                className="sm:text-3xl  ml-[500px] md:text-[32px] text-[34px] w-[25%] text-center text-indigo-800 ml-60"
-                size="txtPoppinsBold34"
+              <Text style={{ 
+            marginLeft: '350px',
+            fontSize: '3xl', // Adjust this value as needed for different screen sizes
+            '@media (min-width: 640px)': {
+              fontSize: '3xl'
+            },
+            '@media (min-width: 768px)': {
+              fontSize: '3px'
+            },
+            fontSize: '34px',
+            textAlign: 'left',
+            color: '#1F2544',
+            display: 'flex',
+            alignItems: 'center',
+            marginTop: '70px',
+            }}
+          size="txtPoppinsBold34"
               >
                 My Profile
               </Text>
-              <div className="bg-gray-50 ml-[500px] flex flex-col items-center justify-start p-[22px] sm:px-5 rounded-[30px] w-87 shadow-md">
+              <div style={{ marginLeft: '350px', backgroundColor: '#F7F1E5', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', marginTop: '20px', padding: '39px', paddingLeft: '5px', paddingRight: '5px', borderRadius: '30px', width: '100%' , boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'}} >
                 <div className="flex flex-col justify-start mb-1.5 w-[90%] md:w-full">
                   <div className="flex md:flex-col flex-row md:gap-5 items-end justify-start w-[99%] md:w-full">
                     <Text

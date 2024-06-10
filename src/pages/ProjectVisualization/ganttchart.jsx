@@ -80,7 +80,7 @@ const GanttComponent = () => {
   const options = {
     height: 1000, // Reduced height to make the chart smaller
     gantt: {
-      defaultStartDateMillis: new Date(2015, 3, 28),
+      defaultStartDateMillis: new Date(2024, 3, 28),
       criticalPathEnabled: true,
       criticalPathStyle: {
         stroke: "#e64a19",
@@ -88,6 +88,11 @@ const GanttComponent = () => {
       },
       innerGridTrack: { fill: "#fff3e0" },
       innerGridDarkTrack: { fill: "#ffcc80" },
+      palette: [
+        { color: '#d9534f' }, // Red for high priority
+        { color: '#f0ad4e' }, // Orange for medium priority
+        { color: '#5cb85c' }, // Green for low priority
+      ]
     },
   };
 

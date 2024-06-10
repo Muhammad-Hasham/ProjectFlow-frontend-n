@@ -85,10 +85,17 @@ const MyProjectsPage = () => {
     <div style={{ display: 'flex', flexDirection: 'row', height: '100vh' }}>
       <Navigation />
       <div style={{ width: '73%', padding: '20px', marginLeft: '300px' }}>
-        <Text
-          className="text-base text-indigo-800 cursor-pointer"
+      <Text
+          className="md:ml-[0] ml-[851px] text-base text-indigo-800 tracking-[0.44px] cursor-pointer"
+          size="txtPoppinsRegular16"
           onClick={() => navigate('/myprofile')}
-          style={{ fontSize: '18px', marginLeft: '800px' }}
+          style={{
+            marginLeft:'85%',
+            fontSize: '16px',
+            textAlign: 'left',
+            color: '#1F2544',
+            marginTop: '50px',
+          }}
         >
           My Profile
         </Text>

@@ -219,8 +219,8 @@ const KanbanComponent = () => {
             {Object.keys(tasks)
               .sort()
               .map((columnId) => (
-                <div key={columnId} className="kanban-column">
-                  <div className="column-header">
+                <div  style={{backgroundColor: '#C7B7A3', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)'}} key={columnId} className="kanban-column">
+                  <div className="column-header" >
                     <h3>{columnId === 'inProgress' ? 'IN PROGRESS' : columnId.toUpperCase()}</h3>
                     <div className="column-buttons">
                     {userrole==="Project Manager"  && (
@@ -245,10 +245,11 @@ const KanbanComponent = () => {
                       <div
                         ref={provided.innerRef}
                         style={{
-                          background: snapshot.isDraggingOver ? '#A3BFFA' : '#EDF2F7',
+                          background: snapshot.isDraggingOver ? '#E7D37F' : '#EDF2F7',
                           padding: '16px',
                           minHeight: '150px',
                           borderRadius: '8px',
+                          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)'
                         }}
                       >
                         {tasks[columnId]?.map((task, index) => (
@@ -295,8 +296,8 @@ const KanbanComponent = () => {
                   )}
                     {userrole==="Project Manager"  && (
                     <Button shape="round" color="indigo_800_01" onClick={() => handleAddTaskToCategory(newCategory)}>
-                      +
-                    </Button>
+                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>+</span>
+                  </Button>
                     )}
                   </div>
                 </div>
@@ -347,20 +348,22 @@ const KanbanComponent = () => {
        {/* Add category popup */}
        {showAddCategoryPopup && (
           <div className="add-category-popup">
-            <label htmlFor="newCategory">Enter Category Name: </label>
-            <input
-              type="text"
-              id="newCategory"
-              value={newCategory}
-              onChange={(e) => setNewCategory(e.target.value)}
-            />
-            <Button shape="round" color="indigo_800_01" onClick={handleAddCategory}>
-              Add
-            </Button>
-            <Button shape="round" onClick={() => setShowAddCategoryPopup(false)} className="cancel-button">
-              Cancel
-            </Button>
-          </div>
+          <label htmlFor="newCategory" style={{ marginRight: '10px', fontWeight: 'bold' }}>Enter Category Name:</label>
+          <input
+            type="text"
+            id="newCategory"
+            value={newCategory}
+            onChange={(e) => setNewCategory(e.target.value)}
+            style={{ marginRight: '10px', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
+          <Button shape="round" color="indigo_800_01" onClick={handleAddCategory} style={{ marginRight: '10px' }}>
+            Add
+          </Button>
+          <Button shape="round" onClick={() => setShowAddCategoryPopup(false)} className="cancel-button">
+            Cancel
+          </Button>
+        </div>
+        
         )}
 
         {/* Kanban popup */}
@@ -381,9 +384,26 @@ const KanbanComponent = () => {
         {/* Button to add a new category */}
         <div className="add-category-button">
         {userrole==="Project Manager"  && (
-          <Button data-testid="add" style={{ position: 'absolute', top: 400, right: 80, margin: '8px' }} shape="round" color="indigo_800_01" onClick={() => setShowAddCategoryPopup(true)}>
-            +
-          </Button>
+          <Button
+          data-testid="add"
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            margin: '8px',
+            borderRadius: '24px',
+            padding: '12px 24px',
+            backgroundColor: '#860A35',
+            color: '#ffffff',
+            boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.5)',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+          onClick={() => setShowAddCategoryPopup(true)}
+        >
+          + New Category
+        </Button>
+        
         )}
         </div>
       </div>

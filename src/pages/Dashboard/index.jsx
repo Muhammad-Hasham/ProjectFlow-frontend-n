@@ -94,25 +94,65 @@ const DashboardPage = () => {
     // Replace 'dummy' with the actual project ID or fetch it from your state
     navigate("/newtask");
   };
+  let token = localStorage.getItem("token");
+  const handleLogout = async () => {
+  
+    fetch("https://projectflow-cgjn.onrender.com/api/v1/users/logout", {
+      method: "GET",
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        localStorage.clear();
+        setPopUp({ type: "success" });
+        navigate("/signin");
+      })
+      .catch((error) => {
+        setPopUp({ type: "error" });
+        console.error("Error logging in", error);
+    });
+  }
 
   return (
     <div>
       <Navigation />
 
       <div style={{ width: '73%', padding: '20px', marginLeft: '350px' }}>
+        <div className="flex justify-end space-x-8 mr-10">
         <Text
-          className="flex flex-row items-baseline justify-around md:ml-[0] ml-[800px] text-base text-indigo-800 tracking-[0.44px]"
+          className="md:ml-[0] ml-[851px] text-base text-indigo-800 tracking-[0.44px] cursor-pointer"
+          size="txtPoppinsRegular16"
           onClick={() => navigate('/myprofile')}
-          style={{ fontSize: '18px', cursor: 'pointer' }}
+          style={{
+            marginLeft:'80%',
+            fontSize: '16px',
+            textAlign: 'left',
+            color: '#1F2544',
+            marginTop: '50px',
+          }}
         >
           My Profile
         </Text>
+        <Text
+              className="md:ml-[0] ml-[851px] text-base text-indigo-800 tracking-[0.44px] cursor-pointer"
+              size="txtPoppinsRegular16"
+              onClick={handleLogout}
+              style={{ fontSize: '18px', cursor: 'pointer',color: '#1F2544', fontSize: '16px',
+                marginTop: '50px', }}
+        >
+            
+              Logout
+            </Text>
+            </div>
 
         <div className="flex sm:flex-col flex-row gap-[58px] items-center justify-center md:ml-[0] ml-[139px] mt-2 w-[54%] md:w-full">
   <div className="w-[36%] sm:w-[36%]">
     <Img className="h-[148px] md:h-auto object-cover w-full rounded-lg shadow-lg" src="images/welcome.gif" alt="welcome" />
   </div>
-  <div className="text-center w-[64%] sm:w-[64%]">
+  <div style={{color: '#1F2544', textshadow: "2px 2px 4px rgba(0, 0, 0, 0.1);" }} className="text-center w-[64%] sm:w-[64%]">
     <Text className="text-3xl md:text-4xl text-custom-color font-bold mb-4">Welcome, {name}</Text>
     <p className="text-lg md:text-xl text-custom-color-light">Your journey starts here. Let's make great things happen together!</p>
   </div>
