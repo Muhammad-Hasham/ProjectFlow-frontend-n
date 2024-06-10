@@ -35,7 +35,7 @@ const AppsPage = () => {
     };
   
     axios
-      .post('https://projectflow-zoombackend.onrender.com//meeting', data)
+      .post('https://projectflow-zoombackend.onrender.com/meeting', data)
       .then((res) => {
         console.log(res.data);
         let URL = res.data.join_url.replace(
