@@ -48,7 +48,7 @@ function App() {
       const googleDocsUrl = 'https://docs.google.com/document/d/' + val.documentId + '/edit';
       window.open(googleDocsUrl, "_blank");
 
-      window.location.href = 'http://localhost:3001/apps';
+      window.location.href = 'https://project-flow-frontend-n.vercel.app/apps';
     });
   }
 
