@@ -154,7 +154,7 @@ const AutomaticTasks = () => {
                     setTimeout(() => {
                         setLoading(false);
                         // If tasks are saved successfully, call sendSavedTasksToSlack function
-                        //sendSavedTasksToSlack(selectedTasks);
+                        sendSavedTasksToSlack(selectedTasks);
                         setTasks([]);
                         setMicrophoneClicked(true);
                         alert('Tasks saved successfully!');
