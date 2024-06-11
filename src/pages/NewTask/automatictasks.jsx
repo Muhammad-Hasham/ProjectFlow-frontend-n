@@ -223,9 +223,9 @@ const AutomaticTasks = () => {
                     <Typography variant="body1" gutterBottom>
                         Recorded Text: {transcript}
                     </Typography>
-                    <Button
+                    <Button style = {{backgroundColor:"#860A35"}}
                         variant="contained"
-                        color="primary"
+                        
                         //onClick={handleGenerateTaskClick}
                         disabled={isLoading}
                         startIcon={isLoading && <CircularProgress size={24} />}
