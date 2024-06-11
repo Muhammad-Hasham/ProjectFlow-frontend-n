@@ -208,9 +208,9 @@ const AutomaticTasks = () => {
         <DialogTitle id="form-dialog-title">Automatic Task Generation</DialogTitle>
         <DialogContent dividers>
             <Box textAlign="center" py={2}>
-                <Button
+                <Button style = {{backgroundColor:"#860A35"}}
                     variant="contained"
-                    color="primary"
+                    
                     startIcon={isRecording ? <MicOff /> : <Mic />}
                     onClick={handleSpeakNowClick}
                 >
