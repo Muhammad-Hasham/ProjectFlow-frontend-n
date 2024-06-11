@@ -226,7 +226,7 @@ const AutomaticTasks = () => {
                     <Button style = {{backgroundColor:"#860A35"}}
                         variant="contained"
                         
-                        //onClick={handleGenerateTaskClick}
+                        onClick={handleGenerateTaskClick}
                         disabled={isLoading}
                         startIcon={isLoading && <CircularProgress size={24} />}
                     >
