@@ -80,9 +80,9 @@ const AutomaticTasks = () => {
         }
     };
 
-   /* const handleGenerateTaskClick = () => {
+    const handleGenerateTaskClick = () => {
         const generateTasks = () => {
-            fetch('http://localhost:8000/api/generate-tasks', {
+            fetch('https://tasks-abdul-rehmans-projects-50d28608.vercel.app/api/generate-tasks', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ const AutomaticTasks = () => {
     
         setLoading(true);
         generateTasks();
-    }; */
+    }; 
 
     const handleTaskCheckboxChange = (index) => {
         setTasks(prevTasks => {
